@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  origin: ['https://flipkart-clone-six-gray.vercel.app/'],
   credentials: true
 }));
 app.use(express.json());
