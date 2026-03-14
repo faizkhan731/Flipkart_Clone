@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f1f3f6;
+    color: #212121;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-flipkart-yellow hover:bg-flipkart-yellow-dark text-white font-semibold py-3 px-6 rounded-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 cursor-pointer;
+  }
+
+  .btn-orange {
+    @apply bg-flipkart-orange hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 cursor-pointer;
+  }
+
+  .btn-blue {
+    @apply bg-flipkart-blue hover:bg-flipkart-blue-dark text-white font-semibold py-3 px-6 rounded-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 cursor-pointer;
+  }
+
+  /* .product-card {
+    @apply bg-white rounded-sm shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer overflow-hidden group;
+  } */
+
+  .product-card {
+    @apply bg-white rounded-sm shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer overflow-hidden;
+  }
+
+  .section-title {
+    @apply text-xl font-bold text-flipkart-text-dark mb-4;
+  }
+
+  .badge-discount {
+    @apply bg-green-600 text-white text-xs font-bold px-1.5 py-0.5 rounded;
+  }
+
+  .rating-badge {
+    @apply inline-flex items-center gap-1 bg-green-600 text-white text-xs font-semibold px-1.5 py-0.5 rounded;
+  }
+
+  .input-field {
+    @apply w-full border border-gray-300 rounded px-3 py-2.5 text-sm outline-none focus:border-flipkart-blue focus:ring-1 focus:ring-flipkart-blue transition-colors;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-3 sm:px-4 lg:px-6;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Flipkart navbar gradient */
+.navbar-gradient {
+  background: linear-gradient(to bottom, #2874f0, #1a5dc8);
+}
+
+/* Product image zoom */
+.product-img-zoom {
+  transition: transform 0.4s ease;
+}
+
+.product-img-zoom:hover {
+  transform: scale(1.08);
+}
+
+/* Toast notification */
+.toast-enter {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Star rating */
+.star-filled {
+  color: #f9c74f;
+}
+
+.star-empty {
+  color: #e0e0e0;
+}
+
+/* Banner carousel */
+.banner-slide {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Sticky elements */
+.sticky-top {
+  position: sticky;
+  top: 56px;
+}
