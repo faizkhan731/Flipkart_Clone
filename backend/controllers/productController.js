@@ -97,20 +97,20 @@ const getProductById = async (req, res) => {
 };
 
 // GET featured products
-// const getFeaturedProducts = async (req, res) => {
-//   try {
-//     const [products] = await pool.execute(
-//       `SELECT p.*, c.name as category_name
-//        FROM products p
-//        LEFT JOIN categories c ON p.category_id = c.id
-//        WHERE p.is_featured = TRUE AND p.stock > 0
-//        ORDER BY p.rating DESC
-//        LIMIT 8`
-//     );
-//     res.json({ success: true, products });
-//   } catch (error) {
-//     res.status(500).json({ success: false, message: 'Server error' });
-//   }
-// };
+const getFeaturedProducts = async (req, res) => {
+  try {
+    const [products] = await pool.execute(
+      `SELECT p.*, c.name as category_name
+       FROM products p
+       LEFT JOIN categories c ON p.category_id = c.id
+       WHERE p.is_featured = TRUE AND p.stock > 0
+       ORDER BY p.rating DESC
+       LIMIT 8`
+    );
+    res.json({ success: true, products });
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
+};
 
-module.exports = { getProducts, getProductById };
+module.exports = { getProducts, getProductById, getFeaturedProducts };
