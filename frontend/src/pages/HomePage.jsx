@@ -204,7 +204,7 @@ const Banner = () => {
 
 const HomePage = () => {
   const [categories, setCategories] = useState([]);
-  const [featured, setFeatured] = useState([]);
+  // const [featured, setFeatured] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -213,7 +213,7 @@ const HomePage = () => {
     const load = async () => {
       try {
         setLoading(true);
-        const [catRes, featRes, prodRes] = await Promise.all([
+        const [catRes, prodRes] = await Promise.all([
           categoryService.getAll(),
           // productService.getFeatured(),
           productService.getAll({ limit: 16 }),

@@ -5,6 +5,8 @@ const BASE_URL =
   import.meta.env.VITE_API_URL ||
   // "https://flipkart-clone-6-rj5o.onrender.com/api";
   "https://flipkart-clone-9.onrender.com/api";
+
+
 // Session management
 const getSessionId = () => {
   let sid = localStorage.getItem('fk_session_id');
@@ -30,7 +32,7 @@ api.interceptors.request.use((config) => {
 export const productService = {
   getAll: (params = {}) => api.get('/products', { params }),
   getById: (id) => api.get(`/products/${id}`),
-  getFeatured: () => api.get('/products/featured'),
+  // getFeatured: () => api.get('/products/featured'),
 };
 
 // ─── Categories ──────────────────────────────────────────────────────────────
