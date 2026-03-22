@@ -3,7 +3,8 @@ import axios from 'axios';
 // const BASE_URL = import.meta.env.VITE_API_URL || 'https://flipkart-clone-six-gray.vercel.app/';
 const BASE_URL =
   import.meta.env.VITE_API_URL ||
-  "https://flipkart-clone-6-rj5o.onrender.com/api";
+  // "https://flipkart-clone-6-rj5o.onrender.com/api";
+  "https://flipkart-clone-9.onrender.com/api";
 // Session management
 const getSessionId = () => {
   let sid = localStorage.getItem('fk_session_id');
