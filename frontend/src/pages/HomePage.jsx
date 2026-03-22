@@ -216,7 +216,7 @@ const HomePage = () => {
         const [catRes, featRes, prodRes] = await Promise.all([
           categoryService.getAll(),
           productService.getFeatured(),
-          productService.getAll({ limit: 50 }),
+          productService.getAll({ limit: 16 }),
         ]);
         if (catRes.data.success) setCategories(catRes.data.categories);
         if (featRes.data.success) setFeatured(featRes.data.products);
