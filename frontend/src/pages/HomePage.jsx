@@ -215,11 +215,11 @@ const HomePage = () => {
         setLoading(true);
         const [catRes, featRes, prodRes] = await Promise.all([
           categoryService.getAll(),
-          productService.getFeatured(),
+          // productService.getFeatured(),
           productService.getAll({ limit: 16 }),
         ]);
         if (catRes.data.success) setCategories(catRes.data.categories);
-        if (featRes.data.success) setFeatured(featRes.data.products);
+        // if (featRes.data.success) setFeatured(featRes.data.products);
         if (prodRes.data.success) setProducts(prodRes.data.products);
       } catch (err) {
         console.error('Home load error:', err);
